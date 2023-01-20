@@ -6,15 +6,7 @@ import './Formulario.css'
 
 const Formulario = (props) => {
 
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
+    
     
     // Um useState para cada campo do formulário. 
     const [nome, setNome] = useState('') // Todos começam com estado vazio (  useState('')  )
@@ -31,6 +23,10 @@ const Formulario = (props) => {
             imagem,
             time
         })
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
     }
     
     return (
@@ -60,7 +56,7 @@ const Formulario = (props) => {
                 />
                 <ListaSuspensa obrigatorio={true}
                 label="Time"
-                itens={times} 
+                itens={props.times} 
                 valor={time} // Aqui (time) é o time passado pelo usuário
                 aoAlterado={valor => setTime(valor)}
                 />
